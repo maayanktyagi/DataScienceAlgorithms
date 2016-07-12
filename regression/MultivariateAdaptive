@@ -1,1 +1,8 @@
-
+library(lib)
+data(dataset)
+fit <- lib(Employed~., dataset)
+summary(fit)
+evimp(fit)
+predicttor <- predict(fit, longley)
+ans <- mean((datset$Employed - predictor)^2)
+print(ans)
